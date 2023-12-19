@@ -2,18 +2,13 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
 mongoose.connect(
-  "mongodb+srv://sachingirish101:sac101@cluster0.6v8i1ux.mongodb.net/seclob",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
+  "mongodb+srv://sachingirish101:sac101@cluster0.6v8i1ux.mongodb.net/seclob"
 );
 
 // Create MongoDB Schemas
@@ -33,7 +28,7 @@ const Product = mongoose.model("Product", productSchema);
 const Category = mongoose.model("Category", categorySchema);
 
 // Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Routes
 
