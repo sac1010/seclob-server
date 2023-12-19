@@ -2,6 +2,7 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
+var cors = require('cors')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ const Category = mongoose.model("Category", categorySchema);
 
 // Middleware
 app.use(express.json());
+app.use(cors())
 
 // Routes
 
